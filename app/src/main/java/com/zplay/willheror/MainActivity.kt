@@ -9,11 +9,11 @@ import com.appsflyer.AppsFlyerLib
 import com.facebook.applinks.AppLinkData
 import com.orhanobut.hawk.Hawk
 import com.zplay.willheror.MainClasHere.Companion.AF_DEV_KEY
-import com.zplay.willheror.MainClasHere.Companion.C1
-import com.zplay.willheror.MainClasHere.Companion.CH
-import com.zplay.willheror.MainClasHere.Companion.D1
-import com.zplay.willheror.MainClasHere.Companion.linkAppsCheckPart1
-import com.zplay.willheror.MainClasHere.Companion.linkAppsCheckPart2
+import com.zplay.willheror.MainClasHere.Companion.KEY_C1
+import com.zplay.willheror.MainClasHere.Companion.KEY_CH
+import com.zplay.willheror.MainClasHere.Companion.KEY_D1
+import com.zplay.willheror.MainClasHere.Companion.appsCheckParrrrt1
+import com.zplay.willheror.MainClasHere.Companion.appsCheckParrrrt2
 import com.zplay.willheror.databinding.ActivityMainBinding
 import com.zplay.willheror.justcapy.GameActivity
 import kotlinx.coroutines.*
@@ -24,7 +24,7 @@ import java.net.URL
 class MainActivity : AppCompatActivity() {
     private lateinit var bindMain: ActivityMainBinding
 
-    var checker: String = "null"
+    var phraseChecker: String = "null"
     lateinit var jsoup: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         val prefs = getSharedPreferences("ActivityPREF", MODE_PRIVATE)
         if (prefs.getBoolean("activity_exec", false)) {
 
-            when (Hawk.get<String>(CH)) {
+            when (Hawk.get<String>(KEY_CH)) {
                 "2" -> {
                     skipMe()
                 }
@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
             exec.apply()
 
             val job = GlobalScope.launch(Dispatchers.IO) {
-                checker = getCheckCode(linkAppsCheckPart1+linkAppsCheckPart2)
+                phraseChecker = getCheckCode(appsCheckParrrrt1+appsCheckParrrrt2)
             }
             runBlocking {
                 try {
@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-            when (checker) {
+            when (phraseChecker) {
                 "1" -> {
                     AppsFlyerLib.getInstance()
                         .init(AF_DEV_KEY, conversionDataListener, applicationContext)
@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity() {
         return try {
             when (val text = urlConnection.inputStream.bufferedReader().readText()) {
                 "2" -> {
-                    Hawk.put(CH, twoStr)
+                    Hawk.put(KEY_CH, twoStr)
                     twoStr
                 }
                 "1" -> {
@@ -113,12 +113,12 @@ class MainActivity : AppCompatActivity() {
 
         return CoroutineScope(Dispatchers.IO).launch {
             while (NonCancellable.isActive) {
-                val hawk1: String? = Hawk.get(C1)
+                val hawk1: String? = Hawk.get(KEY_C1)
                 if (hawk1 != null) {
                     toTestGrounds()
                     break
                 } else {
-                    val hawk1: String? = Hawk.get(C1)
+                    val hawk1: String? = Hawk.get(KEY_C1)
                     delay(timeInterval)
                 }
             }
@@ -131,7 +131,7 @@ class MainActivity : AppCompatActivity() {
         override fun onConversionDataSuccess(data: MutableMap<String, Any>?) {
 
             val dataGotten = data?.get("campaign").toString()
-            Hawk.put(C1, dataGotten)
+            Hawk.put(KEY_C1, dataGotten)
         }
 
         override fun onConversionDataFail(p0: String?) {
@@ -164,7 +164,7 @@ class MainActivity : AppCompatActivity() {
         ) { appLinkData: AppLinkData? ->
             appLinkData?.let {
                 val params = appLinkData.targetUri.host
-                Hawk.put(D1,params.toString())
+                Hawk.put(KEY_D1,params.toString())
             }
         }
     }

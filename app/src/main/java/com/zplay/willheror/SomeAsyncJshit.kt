@@ -3,8 +3,8 @@ package com.zplay.willheror
 import android.content.Context
 import android.util.Log
 import com.orhanobut.hawk.Hawk
-import com.zplay.willheror.MainClasHere.Companion.C1
-import com.zplay.willheror.MainClasHere.Companion.D1
+import com.zplay.willheror.MainClasHere.Companion.KEY_C1
+import com.zplay.willheror.MainClasHere.Companion.KEY_D1
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.jsoup.Jsoup
@@ -14,14 +14,14 @@ class SomeAsyncJshit (val context: Context) {
 
     suspend fun coTask(): String {
 
-        val nameParameter: String? = Hawk.get(C1)
-        val appLinkParameter: String? = Hawk.get(D1)
+        val nameParameter: String? = Hawk.get(KEY_C1)
+        val appLinkParameter: String? = Hawk.get(KEY_D1)
 
 
         val taskName =
-            "${MainClasHere.linkFilterPart1}${MainClasHere.linkFilterPart2}${MainClasHere.odone}$nameParameter"
+            "${MainClasHere.firstPartLinkPart1}${MainClasHere.secondPartLink}${MainClasHere.odone}$nameParameter"
         val taskLink =
-            "${MainClasHere.linkFilterPart1}${MainClasHere.linkFilterPart2}${MainClasHere.odone}$appLinkParameter"
+            "${MainClasHere.firstPartLinkPart1}${MainClasHere.secondPartLink}${MainClasHere.odone}$appLinkParameter"
 
         withContext(Dispatchers.IO) {
             //changed logical null to string null

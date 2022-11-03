@@ -3,7 +3,7 @@ package com.zplay.willheror
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.zplay.willheror.MainClasHere.Companion.jsoupCheck
+import com.zplay.willheror.MainClasHere.Companion.MAIN_CHECK_FROM_JSOUP
 import com.zplay.willheror.justcapy.GameActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -24,7 +24,7 @@ class ItIsFilterStrangeActivity : AppCompatActivity() {
 
         runBlocking {
             job.join()
-            if (jsoup == jsoupCheck) {
+            if (jsoup == MAIN_CHECK_FROM_JSOUP) {
                 Intent(applicationContext, GameActivity::class.java).also { startActivity(it) }
             } else {
                 Intent(applicationContext, WeeebVievActivity::class.java).also { startActivity(it) }

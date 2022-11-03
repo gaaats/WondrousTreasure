@@ -13,8 +13,8 @@ import com.appsflyer.AppsFlyerLib
 import com.google.android.material.snackbar.Snackbar
 import com.onesignal.OneSignal
 import com.orhanobut.hawk.Hawk
-import com.zplay.willheror.MainClasHere.Companion.C1
-import com.zplay.willheror.MainClasHere.Companion.D1
+import com.zplay.willheror.MainClasHere.Companion.KEY_C1
+import com.zplay.willheror.MainClasHere.Companion.KEY_D1
 import com.zplay.willheror.MainClasHere.Companion.MAIN_ID
 import com.zplay.willheror.databinding.ActivityWeeebVievBinding
 import org.json.JSONException
@@ -249,8 +249,8 @@ class WeeebVievActivity : AppCompatActivity() {
 
         val spoon = getSharedPreferences("SP_WEBVIEW_PREFS", AppCompatActivity.MODE_PRIVATE)
 
-        val cpOne:String? = Hawk.get(C1)
-        val dpOne: String? = Hawk.get(D1)
+        val cpOne:String? = Hawk.get(KEY_C1)
+        val dpOne: String? = Hawk.get(KEY_D1)
         val mainId: String? = Hawk.get(MAIN_ID)
 
 
