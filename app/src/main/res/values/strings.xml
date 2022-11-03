@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Wondrous Treasure</string>
+
+    <string name="app_name_author">© Wondrous Treasure</string>
+    <string name="image_chooser">Choose Image</string>
+
+    <string name="facebook_app_id">837182567481494</string>
+    <string name="fb_login_protocol_scheme">fb837182567481494</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

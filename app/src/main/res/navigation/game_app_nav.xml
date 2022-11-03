@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/game_app_nav"
+    app:startDestination="@id/enterFragment">
+
+    <fragment
+        android:id="@+id/enterFragment"
+        android:name="com.zplay.willheror.justcapy.EnterFragment"
+        android:label="fragment_enter"
+        tools:layout="@layout/fragment_enter">
+        <action
+            android:id="@+id/action_enterFragment_to_chooseFragment"
+            app:destination="@id/chooseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseFragment"
+        android:name="com.zplay.willheror.justcapy.ChooseFragment"
+        android:label="fragment_choose"
+        tools:layout="@layout/fragment_choose">
+        <action
+            android:id="@+id/action_chooseFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.zplay.willheror.justcapy.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result">
+    </fragment>
+</navigation>
