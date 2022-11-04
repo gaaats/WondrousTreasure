@@ -23,9 +23,17 @@ class ResultFragment : Fragment() {
 
     var display: String = ""
 
-    private var imgResId = R.drawable.dog
+    private val listImage = listOf(
+        R.drawable.king,
+        R.drawable.scepter,
+        R.drawable.sword,
+    )
 
-    private var compImg = R.drawable.cat
+    private var imgResId = listImage.random()
+
+
+
+    private var compImg = listImage.random()
     val compChoice = generateChoice()
 
 
@@ -44,6 +52,10 @@ class ResultFragment : Fragment() {
             setTextResult()
             binding.btnImgExit.setOnClickListener {
                 initAlertDialog()
+            }
+
+            binding.btnTryAgain.setOnClickListener {
+                requireActivity().onBackPressed()
             }
 
 
@@ -69,20 +81,20 @@ class ResultFragment : Fragment() {
 
     private fun setCompChoice() {
         when (compChoice) {
-            "dog" -> compImg = R.drawable.dog
-            "cat" -> compImg = R.drawable.cat
-            "mouse" -> compImg = R.drawable.mouse
-            else -> R.drawable.mouse
+            "dog" -> compImg = R.drawable.king
+            "cat" -> compImg = R.drawable.scepter
+            "mouse" -> compImg = R.drawable.sword
+            else -> R.drawable.scepter
         }
         binding.imageDovn.setImageResource(compImg)
     }
 
     private fun setUserChoice() {
         when (userChoiceText) {
-            "dog" -> imgResId = R.drawable.dog
-            "cat" -> imgResId = R.drawable.cat
-            "mouse" -> imgResId = R.drawable.mouse
-            else -> R.drawable.dog
+            "dog" -> imgResId = R.drawable.king
+            "cat" -> imgResId = R.drawable.scepter
+            "mouse" -> imgResId = R.drawable.sword
+            else -> R.drawable.king
         }
         binding.imgTop.setImageResource(imgResId)
     }

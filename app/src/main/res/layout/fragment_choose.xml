@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bkg_custom_grad_lin_game"
+    android:background="@drawable/b1"
     tools:context=".justcapy.ChooseFragment">
 
     <androidx.constraintlayout.widget.Guideline
@@ -28,6 +28,28 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.10" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_hor_40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.40" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_hor_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.20" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_hor_80"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.80" />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_vert_05"
@@ -37,26 +59,42 @@
         app:layout_constraintGuide_percent="0.05" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vert_50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.50" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_vert_95"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.95" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vert_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10" />
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_title_photo_gallery"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:alpha="0.8"
+        android:alpha="0.9"
         android:autoSizeTextType="uniform"
         android:fontFamily="@font/montserrat_black"
         android:gravity="center"
-        android:text="choose"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:text="FIND your treasure"
         android:textAllCaps="true"
-        android:textColor="@color/add_colour_the_most_dark"
+        android:textColor="@color/add_colour_the_most_bright"
         app:layout_constraintBottom_toBottomOf="@id/guideline_hor_10"
-        app:layout_constraintEnd_toEndOf="@id/guideline_vert_95"
-        app:layout_constraintStart_toStartOf="@id/guideline_vert_05"
+        app:layout_constraintEnd_toStartOf="@id/btn_img_exit"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_10"
         app:layout_constraintTop_toTopOf="@id/guideline_hor_05" />
 
     <ImageView
@@ -71,64 +109,97 @@
         app:layout_constraintTop_toTopOf="@id/guideline_hor_05" />
 
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_cat"
-        android:layout_width="240dp"
-        android:layout_height="111dp"
-        android:layout_marginBottom="332dp"
-        android:alpha="0.9"
-        android:fontFamily="@font/montserrat_black"
-        android:rotation="6"
-        android:text="cat"
-        android:textSize="24sp"
-        app:backgroundTint="#FF0101"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+<!--    <com.google.android.material.button.MaterialButton-->
+<!--        android:id="@+id/btn_cat"-->
+<!--        android:layout_width="240dp"-->
+<!--        android:layout_height="111dp"-->
+<!--        android:layout_marginBottom="332dp"-->
+<!--        android:alpha="0.9"-->
+<!--        android:fontFamily="@font/montserrat_black"-->
+<!--        android:rotation="6"-->
+<!--        android:text="cat"-->
+<!--        android:textSize="24sp"-->
+<!--        app:backgroundTint="#FF0101"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.497"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_dog"
-        android:layout_width="240dp"
-        android:layout_height="111dp"
-        android:layout_marginBottom="200dp"
-        android:alpha="0.8"
-        android:fontFamily="@font/montserrat_black"
-        android:rotation="-6"
-        android:text="dog"
-        android:textSize="24sp"
-        app:backgroundTint="#FFA73B"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+<!--    <com.google.android.material.button.MaterialButton-->
+<!--        android:id="@+id/btn_dog"-->
+<!--        android:layout_width="240dp"-->
+<!--        android:layout_height="111dp"-->
+<!--        android:layout_marginBottom="200dp"-->
+<!--        android:alpha="0.8"-->
+<!--        android:fontFamily="@font/montserrat_black"-->
+<!--        android:rotation="-6"-->
+<!--        android:text="dog"-->
+<!--        android:textSize="24sp"-->
+<!--        app:backgroundTint="#FFA73B"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.497"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_mouse"
-        android:layout_width="240dp"
-        android:layout_height="111dp"
-        android:layout_marginBottom="52dp"
-        android:alpha="0.8"
-        android:fontFamily="@font/montserrat_black"
-        android:rotation="6"
-        android:text="mouse"
-        android:textSize="24sp"
-        app:backgroundTint="#4E1504"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+<!--    <com.google.android.material.button.MaterialButton-->
+<!--        android:id="@+id/btn_mouse"-->
+<!--        android:layout_width="240dp"-->
+<!--        android:layout_height="111dp"-->
+<!--        android:layout_marginBottom="52dp"-->
+<!--        android:alpha="0.8"-->
+<!--        android:fontFamily="@font/montserrat_black"-->
+<!--        android:rotation="6"-->
+<!--        android:text="mouse"-->
+<!--        android:textSize="24sp"-->
+<!--        app:backgroundTint="#4E1504"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.497"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/img_main_logo_here"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/guideline_hor_40"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="@id/guideline_hor_10"-->
+<!--        app:srcCompat="@drawable/treasure" />-->
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_cat"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideline_hor_10"
-        app:srcCompat="@drawable/box" />
+        android:id="@+id/img_crovn"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toTopOf="@+id/img_svord"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_50"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_05"
+        app:layout_constraintTop_toTopOf="@id/guideline_hor_20"
+        app:srcCompat="@drawable/king" />
+
+    <ImageView
+        android:id="@+id/img_scepeter"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toTopOf="@+id/img_svord"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_95"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_50"
+        app:layout_constraintTop_toTopOf="@id/guideline_hor_20"
+        app:srcCompat="@drawable/scepter" />
+
+    <ImageView
+        android:id="@+id/img_svord"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_hor_80"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_95"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_05"
+        app:layout_constraintTop_toBottomOf="@id/img_crovn"
+        app:srcCompat="@drawable/sword" />
+
+
+
 
     <TextView
         android:id="@+id/tv_dovn_text"
@@ -138,6 +209,7 @@
         android:fontFamily="@font/opensans_regular"
         android:text="@string/app_name_author"
         android:textAllCaps="true"
+        android:textColor="@color/add_colour_the_most_bright"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

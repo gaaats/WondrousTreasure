@@ -3,8 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:alpha="0.9"
     android:layout_height="match_parent"
-    android:background="@drawable/bkg_custom_grad_lin_game"
+    android:background="@drawable/b1"
     tools:context=".justcapy.ResultFragment">
 
     <androidx.constraintlayout.widget.Guideline
@@ -27,6 +28,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_hor_80"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.80" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -59,7 +67,7 @@
     <TextView
         android:id="@+id/textView4"
         android:layout_width="67dp"
-        android:layout_height="0dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="vs"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -82,35 +90,35 @@
         android:gravity="center"
         android:text="Lose"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@android:color/holo_orange_dark"
+        android:textColor="@color/add_colour_the_most_bright"
         android:textSize="50sp"
         android:fontFamily="@font/montserrat_black"
-        app:layout_constraintBottom_toTopOf="@id/tv_dovn_text"
+        app:layout_constraintBottom_toTopOf="@id/guideline_hor_80"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/img_top"
-        android:layout_width="159dp"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/guideline_hor_10"
         app:layout_constraintVertical_bias="0.03"
-        app:srcCompat="@drawable/cat" />
+        app:srcCompat="@drawable/king" />
 
     <ImageView
         android:id="@+id/image_dovn"
-        android:layout_width="161dp"
-        android:layout_height="185dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         app:layout_constraintBottom_toTopOf="@id/tv_result"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/cat" />
+        app:srcCompat="@drawable/sword" />
 
     <TextView
         android:id="@+id/tv_dovn_text"
@@ -120,10 +128,25 @@
         android:fontFamily="@font/opensans_regular"
         android:text="@string/app_name_author"
         android:textAllCaps="true"
+        android:textColor="@color/add_colour_the_most_bright"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline_hor_95" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_try_again"
+        android:layout_width="240dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:text="try again"
+        android:fontFamily="@font/montserrat_black"
+        android:textSize="25sp"
+        app:backgroundTint="@color/purple_700"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_hor_95"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_hor_80"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

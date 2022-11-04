@@ -27,6 +27,7 @@ class EnterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         try {
 
+
             binding.btnPlay.setOnClickListener {
                 findNavController().navigate(R.id.action_enterFragment_to_chooseFragment)
             }
